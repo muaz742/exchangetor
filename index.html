@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exchangetor</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+      h1, h2, p, dl, li {
+        color: white;
+      }
+    </style>
+  </head>
+  <body style="text-align: center; background: linear-gradient(45deg,#e66465, #9198e5) no-repeat;">
+    <h1>Welcome, Exchangetor!</h1>
+    <p>
+      <b style="color:rgb(139, 248, 243);;">Warning:</b> This is an <strong>experimental</strong> screen. Please <strong>do not use it
+      commercially.</strong>
+    </p>
+    <div name="usage" style="list-style-type:upper-roman;">
+      <h2>Usage</h2>
+      <dl>
+        <li>Select change type.</li>
+        <li>Enter value.</li>
+        <li>Click Exchangetor button.</li>
+      </dl>
+    </div>
+
+    <div name="app">
+      <h2>Exchangetor</h2>
+      <input type="number" id="inputValue" min="0" max="1000000" />
+      <select name="currency" id="fromBase">
+        <option disabled selected value>-- select base --</option>
+        <option value="USD">American Dollar</option>
+        <option value="ARS">Argentine Peso</option>
+        <option value="AUD">Australian Dollar</option>
+        <option value="BCH">Bitcoin Cash</option>
+        <option value="BGN">Bulgarian Lev</option>
+        <option value="BNB">Binance Coin</option>
+        <option value="BRL">Brazilian Real</option>
+        <option value="BTC">Bitcoin</option>
+        <option value="CAD">Canadian Dollar</option>
+        <option value="CHF">Swiss Franc</option>
+        <option value="CNY">Chinese Yuan</option>
+        <option value="CZK">Czech Republic Koruna</option>
+        <option value="DKK">Danish Krone</option>
+        <option value="DOGE">Dogecoin</option>
+        <option value="DZD">Algerian Dinar</option>
+        <option value="ETH">Ethereum</option>
+        <option value="EUR">Euro</option>
+        <option value="GBP">British Pound Sterling</option>
+        <option value="HKD">Hong Kong Dollar</option>
+        <option value="HRK">Croatian Kuna</option>
+        <option value="HUF">Hungarian Forint</option>
+        <option value="IDR">Indonesian Rupiah</option>
+        <option value="ILS">Israeli New Sheqel</option>
+        <option value="INR">Indian Rupee</option>
+        <option value="ISK">Icelandic Króna</option>
+        <option value="JPY">Japanese Yen</option>
+        <option value="KRW">South Korean Won</option>
+        <option value="LTC">Litecoin</option>
+        <option value="MAD">Moroccan Dirham</option>
+        <option value="MXN">Mexican Peso</option>
+        <option value="MYR">Malaysian Ringgit</option>
+        <option value="NOK">Norwegian Krone</option>
+        <option value="NZD">New Zealand Dollar</option>
+        <option value="PHP">Philippine Peso</option>
+        <option value="PLN">Polish Zloty</option>
+        <option value="RON">Romanian Leu</option>
+        <option value="RUB">Russian Ruble</option>
+        <option value="SEK">Swedish Krona</option>
+        <option value="SGD">Singapore Dollar</option>
+        <option value="THB">Thai Baht</option>
+        <option value="TRY">Turkish Lira</option>
+        <option value="TWD">New Taiwan Dollar</option>
+        <option value="XRP">Ripple</option>
+        <option value="ZAR">South African Rand</option>
+      </select>
+      <a onclick="changeBaseSelection()">
+        <img src="exchange.png" alt="Para Birimini Değiştir" width="20px" height="20px">
+      </a>
+      <select name="currency" id="toBase">
+        <option disabled selected value>-- select base --</option>
+        <option value="USD">American Dollar</option>
+        <option value="ARS">Argentine Peso</option>
+        <option value="AUD">Australian Dollar</option>
+        <option value="BCH">Bitcoin Cash</option>
+        <option value="BGN">Bulgarian Lev</option>
+        <option value="BNB">Binance Coin</option>
+        <option value="BRL">Brazilian Real</option>
+        <option value="BTC">Bitcoin</option>
+        <option value="CAD">Canadian Dollar</option>
+        <option value="CHF">Swiss Franc</option>
+        <option value="CNY">Chinese Yuan</option>
+        <option value="CZK">Czech Republic Koruna</option>
+        <option value="DKK">Danish Krone</option>
+        <option value="DOGE">Dogecoin</option>
+        <option value="DZD">Algerian Dinar</option>
+        <option value="ETH">Ethereum</option>
+        <option value="EUR">Euro</option>
+        <option value="GBP">British Pound Sterling</option>
+        <option value="HKD">Hong Kong Dollar</option>
+        <option value="HRK">Croatian Kuna</option>
+        <option value="HUF">Hungarian Forint</option>
+        <option value="IDR">Indonesian Rupiah</option>
+        <option value="ILS">Israeli New Sheqel</option>
+        <option value="INR">Indian Rupee</option>
+        <option value="ISK">Icelandic Króna</option>
+        <option value="JPY">Japanese Yen</option>
+        <option value="KRW">South Korean Won</option>
+        <option value="LTC">Litecoin</option>
+        <option value="MAD">Moroccan Dirham</option>
+        <option value="MXN">Mexican Peso</option>
+        <option value="MYR">Malaysian Ringgit</option>
+        <option value="NOK">Norwegian Krone</option>
+        <option value="NZD">New Zealand Dollar</option>
+        <option value="PHP">Philippine Peso</option>
+        <option value="PLN">Polish Zloty</option>
+        <option value="RON">Romanian Leu</option>
+        <option value="RUB">Russian Ruble</option>
+        <option value="SEK">Swedish Krona</option>
+        <option value="SGD">Singapore Dollar</option>
+        <option value="THB">Thai Baht</option>
+        <option value="TRY">Turkish Lira</option>
+        <option value="TWD">New Taiwan Dollar</option>
+        <option value="XRP">Ripple</option>
+        <option value="ZAR">South African Rand</option>
+      </select>
+      <button onclick="calculate()">Calculate</button>
+
+      <h3 id="result"></h3>
+    </div>
+
+    <script>
+      const result = document.getElementById("result");
+
+      function calculate() {
+        const inputValue = document.getElementById("inputValue").value;
+        const fromBase = document.getElementById("fromBase").value;
+        const toBase = document.getElementById("toBase").value;
+        const url = `https://exchange-rates.abstractapi.com/v1/live/?api_key=e789452bbdae45f586d65bef21442fa8&base=${fromBase}&target=${toBase}`;
+        $.getJSON(url, function (data) {
+          const exchange_rates = data.exchange_rates[toBase];
+          const result = inputValue * exchange_rates;
+          $("#result").html(
+            result.toLocaleString("en-US", {
+              style: "currency",
+              currency: toBase,
+            })
+          );
+        });
+      }
+
+      function changeBaseSelection() {
+        const fromBase = document.getElementById("fromBase").value;
+        const toBase = document.getElementById("toBase").value;
+        document.getElementById("fromBase").value = toBase;
+        document.getElementById("toBase").value = fromBase;
+        calculate();
+      }
+    </script>
+  </body>
+</html>
